@@ -380,7 +380,8 @@ Before that, I want to say, every model consists of certain static structures an
       if (isHidden) {
         searchOverlayArea.classList.remove('hidden')
         document.body.classList.add('hidden')
-        // inputArea.focus()
+        inputArea.focus() // for auto focus
+        getSearchFile() //
       } else {
         searchOverlayArea.classList.add('hidden')
         document.body.classList.remove('hidden')

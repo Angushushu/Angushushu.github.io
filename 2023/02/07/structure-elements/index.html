@@ -386,7 +386,8 @@ Above is a naive example that shows the main component of the potential model: t
       if (isHidden) {
         searchOverlayArea.classList.remove('hidden')
         document.body.classList.add('hidden')
-        // inputArea.focus()
+        inputArea.focus() // for auto focus
+        getSearchFile() //
       } else {
         searchOverlayArea.classList.add('hidden')
         document.body.classList.remove('hidden')
