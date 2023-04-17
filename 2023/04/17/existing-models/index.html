@@ -11,7 +11,7 @@
   
   <title>
     
-      Structure - Elements 
+      existing models 
       
       
       |
@@ -149,11 +149,11 @@
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
     <div class="post-content">
-      <div class="post-title">Structure - Elements</div>
+      <div class="post-title">existing models</div>
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-          2023-02-07 11:53:00
+          2023-04-17 16:27:51
         </span>
         
               <span class="post-tags">
@@ -175,28 +175,20 @@
           
       </div>
       <div class="markdown-body">
-        <center>
-<img src="/images/struct_example.png" width="500">
-naive example of the structure
-</center>
-Above is a naive example that shows the main component of the potential model: the connections between representations, and the connections between states (by actions). There will be a lot of features needed to be adjusted, just providing an insight into the model.
-
-<h1 id="Elements"><a href="#Elements" class="headerlink" title="Elements"></a>Elements</h1><p>The two main elements required to generate this structure are representations (set of representations), and actions (sequence of actions). The finest elements of them (without elements constructing them) are the representation units and action units. These elements are connected by two types of connection, let’s call them connection 1 and connection 2. Connection 1 is intended to simulate semantic memory, priming, activation of knowledge, etc. Connection 2 is intended to simulate procedural memory, knowledge of problem-solving, etc. Connection 2 is always directed, but the features of connection 1 will need more discussion.</p>
-<h2 id="1-Representation"><a href="#1-Representation" class="headerlink" title="1 Representation"></a>1 Representation</h2><p>Representation is an abstract but simple concept. It’s a set of certain information (elements), and the elements within a representation can be representation units, representations, ordered pairs of representations, or actions. You can consider it as a node in an artificial neural network that explicitly states its meaning (which makes the model more explanatory).</p>
-<h3 id="1-1-Representation-Unit"><a href="#1-1-Representation-Unit" class="headerlink" title="1.1 Representation Unit"></a>1.1 Representation Unit</h3><p>A representation unit is the most basic unit of representation, which contains nothing. You can consider it as a sensory unit, which provides information by itself. In the implementation, representation is more like a starting point of the model, the implementer of the model could determine its level of specificity. For instance, in discourse psychology, a representation unit can be a letter, a word, or a thought unit.</p>
-<h3 id="1-2-State"><a href="#1-2-State" class="headerlink" title="1.2 State"></a>1.2 State</h3><p>A state is a representation in connection 2. Consider the experience of feeling hungry and finishing your meal, these are two states. It is a set of representations that might provide you with an experience. I’m using “might” here because it’s not guaranteed that any state would provide you with an experience, some of the states are generally retrieved unconsciously and thus cannot be experienced (if we define experience as something involving consciousness). </p>
-<h3 id="1-3-Goal"><a href="#1-3-Goal" class="headerlink" title="1.3 Goal"></a>1.3 Goal</h3><p>A goal is a desired state. That is, it involves connection 2. To make it more specific, we define it as a sink (without outgoing edges) representation in connection 2. That is, consider the case you feel hungry, and it is connected to a state of fullness. In a bigger graph of connection 2, where the state of full is pointing to a state of survival, the state of full cannot be considered as a goal. However, when we extract the subgraph, in which the state of full is pointing to nothing, it can then be considered as a goal.</p>
-<h2 id="2-Action"><a href="#2-Action" class="headerlink" title="2 Action"></a>2 Action</h2><p>An action is an activity that leads individuals to change their state. Creature won’t be able to generate movement with only observations of states. Thus, action is essential. I identify two types of action, physical and mental. However, how to define action precisely still faces some issues and we will introduce the issues later. Currently, let’s define an action as a list of actions.</p>
-<h3 id="2-1-Action-Unit"><a href="#2-1-Action-Unit" class="headerlink" title="2.1 Action Unit"></a>2.1 Action Unit</h3><p>An action unit is the minimal unit of action, which contains nothing but represents a single individual change (physical or mental).</p>
-<h3 id="2-1-Physical-Action"><a href="#2-1-Physical-Action" class="headerlink" title="2.1 Physical Action"></a>2.1 Physical Action</h3><p>Physical action is straightforward, any movement of muscle can be considered physical activity. Thus physical actions have a strong relationship with the motor system. Generally, we can use the easy definition of action for physical activity. Consider the action of drinking water, it can include multiple actions such as picking up a bottle and pouring the water into your mouth. However, if we consider the action unit as the firing of our motor neurons, there might be some parallel action. Thus it might be better to use the graph to represent actions.</p>
-<h3 id="2-2-Mental-Action"><a href="#2-2-Mental-Action" class="headerlink" title="2.2 Mental Action"></a>2.2 Mental Action</h3><p>Mental action indicates mental functions, such as solving a math problem or thinking about philosophical problems. Similar to physical activity, it can be considered as a list of actions in the simple case. However, in most cases, there might be function calling or parallel actions going on. Also, there might be an information passing issue for the function calling of parallel actions, that is, how does an action distribute its input to multiple subactions? Mental action can be much more complicated than physical action, thus it is worth more discussion about how to implement mental action in the future.</p>
+        <p>I’ve found several existing models.</p>
+<ul>
+<li>Psi-thoery by Dietrich Dörner et al</li>
+<li>OpenCog by Ben Goertzel et al</li>
+</ul>
+<p>The structure of both has some similarities with mine. The quad of psi has similar features as the representations in my model, which include the sur&#x2F;sub connection (corresponding to Connection 1) and a motor-state graph (corresponding to Connection 2). However, I just notice these two models so might take time to understand them.</p>
+<p>One note: both models, especially OpenCog focus on creating AGI, whereas my model is less focused on AI stuff but more about providing a cognitive (which indicates that it is not equivalent to neurological models) framework to better understand the human psychological processes. Another thing is that LLMs like ChatGpt is very popular recently and people consider it the best approach to AGI. I don’t have much opinion on that since I’m not an AI expert, but if our goal is understanding humans, I still prefer an explanatory model that relies less on statistics.</p>
 
       </div>
       
         <div class="prev-or-next">
           <div class="post-foot-next">
             
-              <a href="/2022/10/20/theory-init/" target="_self">
+              <a href="/2023/02/09/process-bases/" target="_self">
                 <i class="iconfont icon-chevronleft"></i>
                 <span>Prev</span>
               </a>
@@ -205,7 +197,7 @@ Above is a naive example that shows the main component of the potential model: t
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-              2023-02-07 11:53:00
+              2023-04-17 16:27:51
             </span>
             
                   <span class="post-tags">
@@ -228,7 +220,7 @@ Above is a naive example that shows the main component of the potential model: t
           </div>
           <div class="post-foot-prev">
             
-              <a href="/2023/02/09/process-bases/" target="_self">
+              <a href="/2023/04/17/structure-elements/" target="_self">
                 <span>Next</span>
                 <i class="iconfont icon-chevronright"></i>
               </a>
@@ -238,23 +230,6 @@ Above is a naive example that shows the main component of the potential model: t
       
     </div>
     
-  <div id="btn-catalog" class="btn-catalog">
-    <i class="iconfont icon-catalog"></i>
-  </div>
-  <div class="post-catalog hidden" id="catalog">
-    <div class="title">Contents</div>
-    <div class="catalog-content">
-      
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Elements"><span class="toc-text">Elements</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Representation"><span class="toc-text">1 Representation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-Representation-Unit"><span class="toc-text">1.1 Representation Unit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-State"><span class="toc-text">1.2 State</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Goal"><span class="toc-text">1.3 Goal</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Action"><span class="toc-text">2 Action</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Action-Unit"><span class="toc-text">2.1 Action Unit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Physical-Action"><span class="toc-text">2.1 Physical Action</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Mental-Action"><span class="toc-text">2.2 Mental Action</span></a></li></ol></li></ol></li></ol>
-      
-    </div>
-  </div>
-
-  
-<script src="/js/catalog.js"></script>
-
-
-
 
     
       <div class="comments-container">
@@ -555,12 +530,12 @@ Above is a naive example that shows the main component of the potential model: t
       </a>
       <div class="share-content hidden">
         
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Structure%20-%20Elements + '&url=' + http%3A%2F%2Fangushushu.com%2F2023%2F02%2F07%2Fstructure-elements%2F + '" target="_blank" title="Twitter">
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + existing%20models + '&url=' + http%3A%2F%2Fangushushu.com%2F2023%2F04%2F17%2Fexisting-models%2F + '" target="_blank" title="Twitter">
             <i class="iconfont icon-twitter"></i>
           </a>
         
         
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://angushushu.com/2023/02/07/structure-elements/" target="_blank" title="Facebook">
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://angushushu.com/2023/04/17/existing-models/" target="_blank" title="Facebook">
             <i class="iconfont icon-facebooksquare"></i>
           </a>
         
