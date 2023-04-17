@@ -91,17 +91,6 @@
     
     
     <entry>
-      <title>About</title>
-      <link href="/index.html"/>
-      <url>/index.html</url>
-      
-        <content type="html"><![CDATA[<style>.link {    color: #4f8aff !important;    text-decoration: none !important;    border-bottom: none !important;}.link:hover {    font-weight: bold !important;}#head {  transition: transform .5s ease-in-out;}#head:hover {  transform: rotate(180deg);}#head-box {    max-width: 15rem;    max-height: 15rem;    display: flex;    align-items: flex-end}</style><div>    <div style="margin:0 auto; display: flex; max-width: 40rem; height: auto;">        <div id="head-box">            <img id="head" src="/images/head.png" alt="angushushu's skull"></img>        </div>        <div style="padding-left:1rem;max-width:27rem;height:auto;display:flex;align-items:flex-end">            <div style="max-width:27rem;height:auto;line-height:2.4rem;font-size:1.8rem">                <b>NAME: Shu Hu </b><br>                <b>EMAIL:shu13@gsu.edu</b><br>                <b>angushushu@outlook.com</b><br>                <a href="https://github.com/Angushushu" target="_blank" class="link"><b>Github</b>                </a><a href="/files/Shu_CV.pdf" target="_blank" class="link"><b>CV</b>                </a><a href="https://youtube.com/playlist?list=PLBFR62-14ItltucyGPoAHxL_gQOu0Q-Wi" target="_blank" class="link"><b>Playlist</b></a>            </div>        </div>    </div></div><br/><p>Hi, I’m a Ph.D. student of Prof. <a href="https://education.gsu.edu/profile/joe-magliano/" target="_blank" class="link">Joseph P. Magliano</a>. I received my BS degree in Psych, CS, and Math, and a certificate in Digital Cinema Production from UW-Madison. Previously, I worked at Prof. <a href="https://edpsych.education.wisc.edu/staff/matthews-percival/" target="_blank" class="link">Percival Matthews</a>‘ <a href="https://web.education.wisc.edu/pmatthews/" target="_blank" class="link">MELD Lab</a> as a Research Assistant. I’m also collaborating with <a href="https://web.northeastern.edu/ostadabbas/teams/lingfei-luan/" target="_blank" class="link">Lingfei Luan</a> and <a href="https://mediaschool.indiana.edu/people/profile.html?p=lucicore" target="_blank" class="link">Lucía Cores Sarría</a> on film perception studies.</p><blockquote><p><small>Research Interests: Narrative Comprehension, Decision-Making, Emotion, Computational Models, Goals, etc</small></p></blockquote><p align="center"><a href="http://www.cubexmc.net">Find me in minecraft</a></p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Writings</title>
       <link href="/writings/index.html"/>
       <url>/writings/index.html</url>
@@ -118,6 +107,17 @@
       <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>About</title>
+      <link href="/index.html"/>
+      <url>/index.html</url>
+      
+        <content type="html"><![CDATA[<style>.link {    color: #4f8aff !important;    text-decoration: none !important;    border-bottom: none !important;}.link:hover {    font-weight: bold !important;}#head {  transition: transform .5s ease-in-out;}#head:hover {  transform: rotate(180deg);}#head-box {    max-width: 15rem;    max-height: 15rem;    display: flex;    align-items: flex-end}</style><div>    <div style="margin:0 auto; display: flex; max-width: 40rem; height: auto;">        <div id="head-box">            <img id="head" src="/images/head.png" alt="angushushu's skull"></img>        </div>        <div style="padding-left:1rem;max-width:27rem;height:auto;display:flex;align-items:flex-end">            <div style="max-width:27rem;height:auto;line-height:2.4rem;font-size:1.8rem">                <b>NAME: Shu Hu </b><br>                <b>EMAIL:shu13@gsu.edu</b><br>                <b>angushushu@outlook.com</b><br>                <a href="https://github.com/Angushushu" target="_blank" class="link"><b>Github</b>                </a><a href="/files/Shu_CV.pdf" target="_blank" class="link"><b>CV</b>                </a><a href="https://youtube.com/playlist?list=PLBFR62-14ItltucyGPoAHxL_gQOu0Q-Wi" target="_blank" class="link"><b>Playlist</b></a>            </div>        </div>    </div></div><br/><p>Hi, I’m a Ph.D. student of Prof. <a href="https://education.gsu.edu/profile/joe-magliano/" target="_blank" class="link">Joseph P. Magliano</a>. I received my BS degree in Psych, CS, and Math, and a certificate in Digital Cinema Production from UW-Madison. Previously, I worked at Prof. <a href="https://edpsych.education.wisc.edu/staff/matthews-percival/" target="_blank" class="link">Percival Matthews</a>‘ <a href="https://web.education.wisc.edu/pmatthews/" target="_blank" class="link">MELD Lab</a> as a Research Assistant. I’m also collaborating with <a href="https://web.northeastern.edu/ostadabbas/teams/lingfei-luan/" target="_blank" class="link">Lingfei Luan</a> and <a href="https://mediaschool.indiana.edu/people/profile.html?p=lucicore" target="_blank" class="link">Lucía Cores Sarría</a> on film perception studies.</p><blockquote><p><small>Research Interests: Narrative Comprehension, Decision-Making, Emotion, Computational Models, Goals, etc</small></p></blockquote><p align="center"><a href="http://www.cubexmc.net">Find me in minecraft</a></p>]]></content>
       
     </entry>
     
