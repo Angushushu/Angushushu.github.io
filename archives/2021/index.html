@@ -11,7 +11,7 @@
   
   <title>
     
-      Existing Models 
+      Blog: 2021 
       
       
       |
@@ -107,167 +107,98 @@
 
 
       <div class="flex-container">
-        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
-<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
 
+<!-- last: 按年份把文章分组，当前遍历到的年份 -->
+<!-- now: 当前遍历到的文章的发布年份 -->
 
-  <!-- LaTex Display -->
-
-  
-    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
-  
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-      }
-    }
-  </script>
-
-
-
-
-
-  <!-- clipboard -->
-
-  
-    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
-  
-  
-<script src="/js/codeCopy.js"></script>
-
-
-
-
-
-
-
-  
-
-  
-  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
-  <div class="container post-details" id="post-details">
-    <div class="post-content">
-      <div class="post-title">Existing Models</div>
-      <div class="post-attach">
-        <span class="post-pubtime">
-          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-          2023-04-17 16:27:51
-        </span>
-        
-              <span class="post-tags">
-                <i class="iconfont icon-tags mr-10" title="Tags"></i>
-                
-                <span class="span--tag mr-8">
-                  <a href="/tags/theory/" title="theory">
-                    #theory
-                  </a>
-                </span>
-                
-                <span class="span--tag mr-8">
-                  <a href="/tags/model/" title="model">
-                    #model
-                  </a>
-                </span>
-                
-              </span>
-          
-      </div>
-      <div class="markdown-body">
-        <p>I’ve found several existing models.</p>
-<ul>
-<li>Psi-thoery by Dietrich Dörner et al</li>
-<li>OpenCog by Ben Goertzel et al</li>
-</ul>
-<p>The structure of both has some similarities with mine. The quad of psi has similar features as the representations in my model, which include the sur&#x2F;sub connection (corresponding to Connection 1) and a motor-state graph (corresponding to Connection 2). However, I just notice these two models so might take time to understand them.</p>
-<p>One note: both models, especially OpenCog focus on creating AGI, whereas my model is less focused on AI stuff but more about providing a cognitive (which indicates that it is not equivalent to neurological models) framework to better understand the human psychological processes. Another thing is that LLMs like ChatGpt is very popular recently and people consider it the best approach to AGI. I don’t have much opinion on that since I’m not an AI expert, but if our goal is understanding humans, I still prefer an explanatory model that relies less on statistics.</p>
-
-      </div>
-      
-        <div class="prev-or-next">
-          <div class="post-foot-next">
-            
-              <a href="/2023/02/09/process-bases/" target="_self">
-                <i class="iconfont icon-chevronleft"></i>
-                <span>Prev</span>
-              </a>
-            
-          </div>
-          <div class="post-attach">
-            <span class="post-pubtime">
-              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-              2023-04-17 16:27:51
-            </span>
-            
-                  <span class="post-tags">
-                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
-                    
-                    <span class="span--tag mr-8">
-                      <a href="/tags/theory/" title="theory">
-                        #theory
-                      </a>
-                    </span>
-                    
-                    <span class="span--tag mr-8">
-                      <a href="/tags/model/" title="model">
-                        #model
-                      </a>
-                    </span>
-                    
-                  </span>
-              
-          </div>
-          <div class="post-foot-prev">
-            
-              <a href="/2024/02/05/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/" target="_self">
-                <span>Next</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
-            
-          </div>
+<div class="container archives">
+  <div class="post-list">
+    
+        <!-- 后续文章的发布年份呈现 -->
+        <div class="content-title">
+          <h2>
+            <span>2024</span>
+          </h2>
         </div>
       
-    </div>
+      <div class="post-item" title="一些想法">
+        <div class="time-m-d">02-05</div>
+        <div class="title">
+          <a href="/2024/02/05/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/">
+            <span>一些想法</span>
+          </a>
+        </div>
+      </div>
     
-
+        <!-- 后续文章的发布年份呈现 -->
+        <div class="content-title">
+          <h2>
+            <span>2023</span>
+          </h2>
+        </div>
+      
+      <div class="post-item" title="Existing Models">
+        <div class="time-m-d">04-17</div>
+        <div class="title">
+          <a href="/2023/04/17/existing-models/">
+            <span>Existing Models</span>
+          </a>
+        </div>
+      </div>
     
-      <div class="comments-container">
-        
-
-
-
-
-  
-    <script async type="text/javascript" src='https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js' onload="loadValineSuc(this)"></script>
-  
-
-  <div id="vcomments"></div>
-
-  <script>
-    function loadValineSuc() {
-      new Valine({
-        el: '#vcomments',
-        appId: 'W6AOGFAMyF4VAIziB8pX56Oe-gzGzoHsz',
-        appKey: 'QfZDVhjD2RHYdS4Kil8GMQWI',
-        placeholder: 'listening...',
-        avatar: 'retro',
-        lang: 'en'
-      })
-    }
-  </script>
-
-    <style>
-      .comments-container .v .vempty {
-        display: none!important;
-      }
-    </style>
-
-
-
-
+      <div class="post-item" title="Process - Bases">
+        <div class="time-m-d">02-09</div>
+        <div class="title">
+          <a href="/2023/02/09/process-bases/">
+            <span>Process - Bases</span>
+          </a>
+        </div>
+      </div>
+    
+      <div class="post-item" title="Structure - Elements">
+        <div class="time-m-d">02-09</div>
+        <div class="title">
+          <a href="/2023/02/09/structure-elements/">
+            <span>Structure - Elements</span>
+          </a>
+        </div>
+      </div>
+    
+        <!-- 后续文章的发布年份呈现 -->
+        <div class="content-title">
+          <h2>
+            <span>2022</span>
+          </h2>
+        </div>
+      
+      <div class="post-item" title="Theory - Init">
+        <div class="time-m-d">10-20</div>
+        <div class="title">
+          <a href="/2022/10/20/theory-init/">
+            <span>Theory - Init</span>
+          </a>
+        </div>
+      </div>
+    
+        <!-- 后续文章的发布年份呈现 -->
+        <div class="content-title">
+          <h2>
+            <span>2021</span>
+          </h2>
+        </div>
+      
+      <div class="post-item" title="Music Time!">
+        <div class="time-m-d">12-31</div>
+        <div class="title">
+          <a href="/2021/12/31/playlists/">
+            <span>Music Time!</span>
+          </a>
+        </div>
       </div>
     
   </div>
+</div>
 
         
 <div class="footer">
@@ -522,24 +453,6 @@
 
 
         
-  
-    <div class="share-icon tools-bar-item">
-      <a href="javascript: void(0)" id="share-icon">
-        <i class="iconfont iconshare"></i>
-      </a>
-      <div class="share-content hidden">
-        
-          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Existing%20Models + '&url=' + http%3A%2F%2Fangushushu.com%2F2023%2F04%2F17%2Fexisting-models%2F + '" target="_blank" title="Twitter">
-            <i class="iconfont icon-twitter"></i>
-          </a>
-        
-        
-          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://angushushu.com/2023/04/17/existing-models/" target="_blank" title="Facebook">
-            <i class="iconfont icon-facebooksquare"></i>
-          </a>
-        
-      </div>
-    </div>
   
   
 <script src="/js/shares.js"></script>
