@@ -4,6 +4,46 @@
   
     
     <entry>
+      <title>Better Understanding Cross Product - small hints</title>
+      <link href="/2024/10/26/Better-Understanding-Dot-Product-hints/"/>
+      <url>/2024/10/26/Better-Understanding-Dot-Product-hints/</url>
+      
+        <content type="html"><![CDATA[<p>After undergrads, many of my knowledge have lost, recently I’m reviewing some of the concepts. Here I show an example of dot products for 2 vectors with length 2 to help understand the idea of dot product (not a proof).</p><p>Given $\mathbf{v_1} &#x3D; \begin{bmatrix} i_1 \ j_1 \end{bmatrix}, \mathbf{v_2} &#x3D; \begin{bmatrix} i_2 \ j_2 \end{bmatrix}$<br>Shown below:</p><table><thead><tr><th align="center">V1</th><th align="center">V2</th></tr></thead><tbody><tr><td align="center"><img src="/images/cross_prod_v1.jpg"></td><td align="center"><img src="/images/cross_prod_v2.jpg"></td></tr></tbody></table><p>So that dot product is<br>$$\begin{align} \mathbf{v_1} \cdot \mathbf{v_2} &amp; &#x3D; i_1\cdot i_2 + j_1\cdot j_2 \<br>        &amp; &#x3D; |\mathbf{v_1}|\sin\theta_1\cdot|\mathbf{v_2}|\sin \theta_2 + |\mathbf{v_1}|\cos\theta_1\cdot|\mathbf{v_2}|\cos \theta_2\<br>        &amp; &#x3D; |\mathbf{v_1}||\mathbf{v_2}|(\sin\theta_1\cdot\sin\theta_2+\cos\theta_1\cdot\cos\theta_2)\end{align}$$<br>Then by cosine identity, which is $\cos(\theta_1-\theta_2) &#x3D; \cos\theta_1\cdot\cos\theta_2+\sin\theta_1\cdot\sin\theta_2$, we get<br>$$\begin{align} \mathbf{v_1} \cdot \mathbf{v_2} &amp; &#x3D; |\mathbf{v_1}||\mathbf{v_2}|\cos(\theta_1-\theta_2) \<br>    &amp; &#x3D; |\mathbf{v_1}||\mathbf{v_2}|\cos(\Delta\theta) \<br>    &amp; &#x3D; |\mathbf{v_1}|\cos(\Delta\theta)\cdot|\mathbf{v_2}|\end{align}$$<br>When put two vectors together, we see the intuitive meaning of it, which is multiplication of the length of projection of $\mathbf{v_1}$ on $\mathbf{v_2}$ with the length of $\mathbf{v_2}$.<br><img src="/images/cross_prod_3.jpg"><br>Which is a scale related to the angle between two vectors (more specifically, in what degree they are in the same line) and the length between them. So when people only care about the level of parallel, they do cosine similarity:<br>$$\text{cosine similarity} &#x3D; \frac{\mathbf{v_1}\cdot\mathbf{v_f}}{|\mathbf{v_1}||\mathbf{v_2}|} &#x3D; \cos(\Delta\theta)$$<br>Hope this example help you feel more trivia about the operation, it does for me a little bit. If not, let’s go through an real life example:<br><img src="/images/anti_gravity_lean.jpg"><br>Say MJ is performing his Anti-Gravity Lean toward a line on the ground. Let MJ be $\mathbf{v_1}$ and the line be $\mathbf{v_2}$ (we view from aside), there’s sunshine above MJ head. We observe this performance from a location orthogonal to the plane formed by standing MJ and the line. $\cos\Delta\theta\cdot\mathbf{v_1}$ is the shadow of MJ on the line, the more parallel MJ is to the line, the longer his shadow is, and therefore the larger the dot product of MJ and the line would be.<br>To MJ, the dot product might be something correlated to his sense of the length of the line (when the line is beneath him). Since the more parallel they are, the longer the line is in his eyes.</p><p>Note: this is not a formal proof, for formal proof you can see <a href="https://tutorial.math.lamar.edu/classes/calcii/dotproduct.aspx">here</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> math </tag>
+            
+            <tag> skill </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Build &amp; Publish a Python Package</title>
+      <link href="/2024/10/06/Build-Publish-a-Python-Package/"/>
+      <url>/2024/10/06/Build-Publish-a-Python-Package/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Build"><a href="#Build" class="headerlink" title="Build"></a>Build</h2><p>Prepare setup.py<br>An example:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">from setuptools import find_packages, setup</span><br><span class="line">import os</span><br><span class="line">  </span><br><span class="line">with open(&quot;README.md&quot;, &quot;r&quot;) as f:  </span><br><span class="line">    long_description = f.read()  </span><br><span class="line">  </span><br><span class="line">setup(  </span><br><span class="line">    name=&#x27;&lt;package&gt;&#x27;,  </span><br><span class="line">    version=&#x27;0.0.1&#x27;,  </span><br><span class="line">    description=&#x27;&#x27;,  </span><br><span class="line">    packages=find_packages(include=[&#x27;&lt;package&gt;&#x27;, &#x27;&lt;package&gt;.*&#x27;]),  </span><br><span class="line">    long_description=long_description,  </span><br><span class="line">    long_description_content_type=&quot;text/markdown&quot;,  </span><br><span class="line">    url=&#x27;&#x27;,  </span><br><span class="line">    author=&#x27;&#x27;,  </span><br><span class="line">    author_email=&#x27;&#x27;,  </span><br><span class="line">    license=&#x27;GPL-3.0&#x27;,  </span><br><span class="line">    classifiers=[  </span><br><span class="line">        &quot;Programming Language :: Python :: 3&quot;,  </span><br><span class="line">        &quot;License :: OSI Approved :: GNU General Public License v3 (GPLv3)&quot;,  </span><br><span class="line">        &quot;Operating System :: OS Independent&quot;,  </span><br><span class="line">    ],  </span><br><span class="line">    install_requires=[  </span><br><span class="line">        &#x27;pandas&#x27;,   </span><br><span class="line">        &#x27;numpy&#x27; </span><br><span class="line">    ],  </span><br><span class="line">    extras_require=&#123;  </span><br><span class="line">        &#x27;all&#x27;: [],  </span><br><span class="line">        &#x27;dev&#x27;: [&#x27;pytest&gt;=7.0&#x27;, &#x27;twine&gt;=4.0.2&#x27;]  </span><br><span class="line">    &#125;,  </span><br><span class="line">    python_requires=&#x27;&gt;=3.6&#x27;,  </span><br><span class="line">)</span><br></pre></td></tr></table></figure><p>run</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py bdist_wheel sdist</span><br></pre></td></tr></table></figure><p>(optional) to test package locally</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install .</span><br></pre></td></tr></table></figure><h2 id="Publish"><a href="#Publish" class="headerlink" title="Publish"></a>Publish</h2><p>Setup info on <a href="https://test.pypi.org/">test.pypi</a> or <a href="https://pypi.org/">pypi</a> if not yet. The API key for publishing can be found there.</p><p>check:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">twine check dist/*</span><br></pre></td></tr></table></figure><p>publish to test.pypi:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">twine upload -r testpypi dist/*</span><br></pre></td></tr></table></figure><p>publish to pypi:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">twine upload dist/*</span><br></pre></td></tr></table></figure><hr><p>more detail: <a href="https://www.youtube.com/watch?v=5KEObONUkik&amp;t=918s">https://www.youtube.com/watch?v=5KEObONUkik&amp;t=918s</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> skill </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一些想法</title>
       <link href="/2024/02/05/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/"/>
       <url>/2024/02/05/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/</url>
@@ -123,17 +163,6 @@
     
     
     <entry>
-      <title>Writings</title>
-      <link href="/writings/index.html"/>
-      <url>/writings/index.html</url>
-      
-        <content type="html"><![CDATA[<h3 id="Publication"><a href="#Publication" class="headerlink" title="Publication:"></a>Publication:</h3><p><a href="https://www.tandfonline.com/eprint/3UIMVCVPCPKUAZ8VC9HH/full?target=10.1080/0163853X.2024.2352814">Exploring the affordances of text and picture stories</a><br><a href="/files/Introducing_Cognitive_Psychology_in_Film_Studies.pdf">Introducing Cognitive Psychology in Film Studies: Redefining Affordance</a><br><a href="/files/2021%E5%B9%B4%E6%9A%91%E5%81%87%E6%A1%A310%E9%83%A8%E7%94%B5%E5%BD%B1%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8E%E7%94%B5%E5%BD%B1%E5%86%85%E5%AE%B9%E9%87%8F%E5%8C%96%E5%92%8C%E5%8F%97%E4%BC%97%E5%88%86%E6%9E%90%E7%9A%84%E8%B7%A8%E5%AD%A6%E7%A7%91%E7%A0%94%E7%A9%B6.pdf">2021年暑期档10部电影分析–基于电影内容量化和受众分析的跨学科研究(An Analysis of 10 Films in Summer Film Market 2021——An Interdisciplinary Study Based on Film Content Quantification and Audience Analysis)</a></p><h3 id="Psychology"><a href="#Psychology" class="headerlink" title="Psychology:"></a>Psychology:</h3><p><a href="/files/STD2024_Shu.pdf">(Poster) “Frog, don’t do that!”: An exploration of the impact of media on comprehension and participation in narrative experiences</a><br><a href="/files/ALRC_poster.pdf">(Poster) The impact of media on coherence building</a><br><a href="/files/SCiP_2023.pdf">(Poster) Decoding Narrative Discourse: A Computational Exploration of Media Modality Effects</a><br><a href="/files/Role_of_Goals_in_Narrative_Experience.pdf">Review: Role of Goals in Narrative Experience</a><br><a href="/files/Film_in_Memory.pdf">Review: Film in Memory</a><br><a href="/files/Economic_Inequality_and_Social_Stability.pdf">Review: Economic Inequality and Social Stability</a><br><a href="/files/The_Relationship_Between_Preference_and_Familiar-Novel_Level.pdf">Research Proposal: The Relationship Between Preference and Familiar-Novel Level</a><br><a href="/files/Proposal_Poster.pdf">(Poster) Research Proposal: The Relationship Between Preference and Familiar-Novel Level</a></p><h3 id="Screenplay"><a href="#Screenplay" class="headerlink" title="Screenplay:"></a>Screenplay:</h3><p><a href="/files/Normal_Days.pdf">Original script: Normal Days</a><br><a href="/files/The_Hanging_Stranger.pdf">Adaptive script: The Hanging Stranger</a></p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>About</title>
       <link href="/index.html"/>
       <url>/index.html</url>
@@ -150,6 +179,17 @@
       <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Writings</title>
+      <link href="/writings/index.html"/>
+      <url>/writings/index.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="Publication"><a href="#Publication" class="headerlink" title="Publication:"></a>Publication:</h3><p><a href="https://www.tandfonline.com/eprint/3UIMVCVPCPKUAZ8VC9HH/full?target=10.1080/0163853X.2024.2352814">Exploring the affordances of text and picture stories</a><br><a href="/files/Introducing_Cognitive_Psychology_in_Film_Studies.pdf">Introducing Cognitive Psychology in Film Studies: Redefining Affordance</a><br><a href="/files/2021%E5%B9%B4%E6%9A%91%E5%81%87%E6%A1%A310%E9%83%A8%E7%94%B5%E5%BD%B1%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8E%E7%94%B5%E5%BD%B1%E5%86%85%E5%AE%B9%E9%87%8F%E5%8C%96%E5%92%8C%E5%8F%97%E4%BC%97%E5%88%86%E6%9E%90%E7%9A%84%E8%B7%A8%E5%AD%A6%E7%A7%91%E7%A0%94%E7%A9%B6.pdf">2021年暑期档10部电影分析–基于电影内容量化和受众分析的跨学科研究(An Analysis of 10 Films in Summer Film Market 2021——An Interdisciplinary Study Based on Film Content Quantification and Audience Analysis)</a></p><h3 id="Psychology"><a href="#Psychology" class="headerlink" title="Psychology:"></a>Psychology:</h3><p><a href="/files/STD2024_Shu.pdf">(Poster) “Frog, don’t do that!”: An exploration of the impact of media on comprehension and participation in narrative experiences</a><br><a href="/files/ALRC_poster.pdf">(Poster) The impact of media on coherence building</a><br><a href="/files/SCiP_2023.pdf">(Poster) Decoding Narrative Discourse: A Computational Exploration of Media Modality Effects</a><br><a href="/files/Role_of_Goals_in_Narrative_Experience.pdf">Review: Role of Goals in Narrative Experience</a><br><a href="/files/Film_in_Memory.pdf">Review: Film in Memory</a><br><a href="/files/Economic_Inequality_and_Social_Stability.pdf">Review: Economic Inequality and Social Stability</a><br><a href="/files/The_Relationship_Between_Preference_and_Familiar-Novel_Level.pdf">Research Proposal: The Relationship Between Preference and Familiar-Novel Level</a><br><a href="/files/Proposal_Poster.pdf">(Poster) Research Proposal: The Relationship Between Preference and Familiar-Novel Level</a></p><h3 id="Screenplay"><a href="#Screenplay" class="headerlink" title="Screenplay:"></a>Screenplay:</h3><p><a href="/files/Normal_Days.pdf">Original script: Normal Days</a><br><a href="/files/The_Hanging_Stranger.pdf">Adaptive script: The Hanging Stranger</a></p>]]></content>
       
     </entry>
     

@@ -13,7 +13,7 @@
   
   <title>
     
-      Blog: 2024/2 
+      Better Understanding Cross Product - small hints 
       
       
       |
@@ -109,116 +109,171 @@
 
 
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
 
-<div class="container archives">
-  <div class="post-list">
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2024</span>
-          </h2>
+  <!-- LaTex Display -->
+
+  
+    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+  
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    }
+  </script>
+
+
+
+
+
+  <!-- clipboard -->
+
+  
+    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+  
+  
+<script src="/js/codeCopy.js"></script>
+
+
+
+
+
+
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">Better Understanding Cross Product - small hints</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+          2024-10-26 19:33:34
+        </span>
+        
+              <span class="post-tags">
+                <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/math/" title="math">
+                    #math
+                  </a>
+                </span>
+                
+                <span class="span--tag mr-8">
+                  <a href="/tags/skill/" title="skill">
+                    #skill
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <p>After undergrads, many of my knowledge have lost, recently I’m reviewing some of the concepts. Here I show an example of dot products for 2 vectors with length 2 to help understand the idea of dot product (not a proof).</p>
+<p>Given $\mathbf{v_1} &#x3D; \begin{bmatrix} i_1 \ j_1 \end{bmatrix}, \mathbf{v_2} &#x3D; \begin{bmatrix} i_2 \ j_2 \end{bmatrix}$<br>Shown below:</p>
+<table>
+<thead>
+<tr>
+<th align="center">V1</th>
+<th align="center">V2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><img src="/images/cross_prod_v1.jpg"></td>
+<td align="center"><img src="/images/cross_prod_v2.jpg"></td>
+</tr>
+</tbody></table>
+<p>So that dot product is<br>$$\begin{align} \mathbf{v_1} \cdot \mathbf{v_2} &amp; &#x3D; i_1\cdot i_2 + j_1\cdot j_2 \<br>        &amp; &#x3D; |\mathbf{v_1}|\sin\theta_1\cdot|\mathbf{v_2}|\sin \theta_2 + |\mathbf{v_1}|\cos\theta_1\cdot|\mathbf{v_2}|\cos \theta_2\<br>        &amp; &#x3D; |\mathbf{v_1}||\mathbf{v_2}|(\sin\theta_1\cdot\sin\theta_2+\cos\theta_1\cdot\cos\theta_2)\end{align}$$<br>Then by cosine identity, which is $\cos(\theta_1-\theta_2) &#x3D; \cos\theta_1\cdot\cos\theta_2+\sin\theta_1\cdot\sin\theta_2$, we get<br>$$\begin{align} \mathbf{v_1} \cdot \mathbf{v_2} &amp; &#x3D; |\mathbf{v_1}||\mathbf{v_2}|\cos(\theta_1-\theta_2) \<br>    &amp; &#x3D; |\mathbf{v_1}||\mathbf{v_2}|\cos(\Delta\theta) \<br>    &amp; &#x3D; |\mathbf{v_1}|\cos(\Delta\theta)\cdot|\mathbf{v_2}|\end{align}$$<br>When put two vectors together, we see the intuitive meaning of it, which is multiplication of the length of projection of $\mathbf{v_1}$ on $\mathbf{v_2}$ with the length of $\mathbf{v_2}$.<br><img src="/images/cross_prod_3.jpg"><br>Which is a scale related to the angle between two vectors (more specifically, in what degree they are in the same line) and the length between them. So when people only care about the level of parallel, they do cosine similarity:<br>$$\text{cosine similarity} &#x3D; \frac{\mathbf{v_1}\cdot\mathbf{v_f}}{|\mathbf{v_1}||\mathbf{v_2}|} &#x3D; \cos(\Delta\theta)$$<br>Hope this example help you feel more trivia about the operation, it does for me a little bit. If not, let’s go through an real life example:<br><img src="/images/anti_gravity_lean.jpg"><br>Say MJ is performing his Anti-Gravity Lean toward a line on the ground. Let MJ be $\mathbf{v_1}$ and the line be $\mathbf{v_2}$ (we view from aside), there’s sunshine above MJ head. We observe this performance from a location orthogonal to the plane formed by standing MJ and the line. $\cos\Delta\theta\cdot\mathbf{v_1}$ is the shadow of MJ on the line, the more parallel MJ is to the line, the longer his shadow is, and therefore the larger the dot product of MJ and the line would be.<br>To MJ, the dot product might be something correlated to his sense of the length of the line (when the line is beneath him). Since the more parallel they are, the longer the line is in his eyes.</p>
+<p>Note: this is not a formal proof, for formal proof you can see <a target="_blank" rel="noopener" href="https://tutorial.math.lamar.edu/classes/calcii/dotproduct.aspx">here</a></p>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2024/10/06/Build-Publish-a-Python-Package/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>Prev</span>
+              </a>
+            
+          </div>
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
+              2024-10-26 19:33:34
+            </span>
+            
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags mr-10" title="Tags"></i>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/math/" title="math">
+                        #math
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag mr-8">
+                      <a href="/tags/skill/" title="skill">
+                        #skill
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+          <div class="post-foot-prev">
+            
+          </div>
         </div>
       
-      <div class="post-item" title="Better Understanding Cross Product - small hints">
-        <div class="time-m-d">10-26</div>
-        <div class="title">
-          <a href="/2024/10/26/Better-Understanding-Dot-Product-hints/">
-            <span>Better Understanding Cross Product - small hints</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      <div class="post-item" title="Build & Publish a Python Package">
-        <div class="time-m-d">10-06</div>
-        <div class="title">
-          <a href="/2024/10/06/Build-Publish-a-Python-Package/">
-            <span>Build & Publish a Python Package</span>
-          </a>
-        </div>
-      </div>
+
     
-      <div class="post-item" title="一些想法">
-        <div class="time-m-d">02-05</div>
-        <div class="title">
-          <a href="/2024/02/05/%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95/">
-            <span>一些想法</span>
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2023</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="Existing Models">
-        <div class="time-m-d">04-17</div>
-        <div class="title">
-          <a href="/2023/04/17/existing-models/">
-            <span>Existing Models</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Structure - Elements">
-        <div class="time-m-d">02-09</div>
-        <div class="title">
-          <a href="/2023/02/09/structure-elements/">
-            <span>Structure - Elements</span>
-          </a>
-        </div>
-      </div>
-    
-      <div class="post-item" title="Process - Bases">
-        <div class="time-m-d">02-09</div>
-        <div class="title">
-          <a href="/2023/02/09/process-bases/">
-            <span>Process - Bases</span>
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2022</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="Theory - Init">
-        <div class="time-m-d">10-20</div>
-        <div class="title">
-          <a href="/2022/10/20/theory-init/">
-            <span>Theory - Init</span>
-          </a>
-        </div>
-      </div>
-    
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2021</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="Music Time!">
-        <div class="time-m-d">12-31</div>
-        <div class="title">
-          <a href="/2021/12/31/playlists/">
-            <span>Music Time!</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+
+
+
+
+  
+    <script async type="text/javascript" src='https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js' onload="loadValineSuc(this)"></script>
+  
+
+  <div id="vcomments"></div>
+
+  <script>
+    function loadValineSuc() {
+      new Valine({
+        el: '#vcomments',
+        appId: 'W6AOGFAMyF4VAIziB8pX56Oe-gzGzoHsz',
+        appKey: 'QfZDVhjD2RHYdS4Kil8GMQWI',
+        placeholder: 'listening...',
+        avatar: 'retro',
+        lang: 'en'
+      })
+    }
+  </script>
+
+    <style>
+      .comments-container .v .vempty {
+        display: none!important;
+      }
+    </style>
+
+
+
+
       </div>
     
   </div>
-</div>
 
         
 <div class="footer">
@@ -477,6 +532,24 @@
 
 
         
+  
+    <div class="share-icon tools-bar-item">
+      <a href="javascript: void(0)" id="share-icon">
+        <i class="iconfont iconshare"></i>
+      </a>
+      <div class="share-content hidden">
+        
+          <a class="share-item" href="https://twitter.com/intent/tweet?text=' + Better%20Understanding%20Cross%20Product%20-%20small%20hints + '&url=' + http%3A%2F%2Fangushushu.com%2F2024%2F10%2F26%2FBetter-Understanding-Dot-Product-hints%2F + '" target="_blank" title="Twitter">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        
+        
+          <a class="share-item" href="https://www.facebook.com/sharer.php?u=http://angushushu.com/2024/10/26/Better-Understanding-Dot-Product-hints/" target="_blank" title="Facebook">
+            <i class="iconfont icon-facebooksquare"></i>
+          </a>
+        
+      </div>
+    </div>
   
   
 <script src="/js/shares.js"></script>
