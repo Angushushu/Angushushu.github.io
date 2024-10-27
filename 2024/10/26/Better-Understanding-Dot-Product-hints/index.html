@@ -34,6 +34,10 @@
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
   <!-- 代码块风格 -->
   
+    
+<link rel="stylesheet" href="/css/figcaption/mac-block.css">
+
+  
 
   <!-- jquery3.3.1 -->
   
@@ -70,7 +74,7 @@
       document.documentElement.setAttribute('color-mode', colorMode)
     }
   </script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
   <div id="particles-js" style="margin: 0; padding: 0; height: 100%; width: 100%; position: fixed;"></div>
   <body>
@@ -116,7 +120,7 @@
   <!-- LaTex Display -->
 
   
-    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+    <script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   
   <script>
     MathJax = {
@@ -133,7 +137,7 @@
   <!-- clipboard -->
 
   
-    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+    <script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
   
   
 <script src="/js/codeCopy.js"></script>
@@ -154,7 +158,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-          2024-10-26 19:33:34
+          2024-10-26 21:03:49
         </span>
         
               <span class="post-tags">
@@ -177,20 +181,38 @@
       </div>
       <div class="markdown-body">
         <p>After undergrads, many of my knowledge have lost, recently I’m reviewing some of the concepts. Here I show an example of dot products for 2 vectors with length 2 to help understand the idea of dot product (not a proof).</p>
-<p>Given $\mathbf{v_1} &#x3D; \begin{bmatrix} i_1 \ j_1 \end{bmatrix}, \mathbf{v_2} &#x3D; \begin{bmatrix} i_2 \ j_2 \end{bmatrix}$<br>Shown below:</p>
+<p>Given $\mathbf{v_1} = \begin{bmatrix} i_1 \\ j_1 \end{bmatrix}, \mathbf{v_2} = \begin{bmatrix} i_2 \\ j_2 \end{bmatrix}$ </p>
+<p>Shown below:</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">V1</th>
-<th align="center">V2</th>
+<th style="text-align:center">V1</th>
+<th style="text-align:center">V2</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><img src="/images/cross_prod_v1.jpg"></td>
-<td align="center"><img src="/images/cross_prod_v2.jpg"></td>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="/images/cross_prod_v1.jpg" alt=""></td>
+<td style="text-align:center"><img src="/images/cross_prod_v2.jpg" alt=""></td>
 </tr>
-</tbody></table>
-<p>So that dot product is<br>$$\begin{align} \mathbf{v_1} \cdot \mathbf{v_2} &amp; &#x3D; i_1\cdot i_2 + j_1\cdot j_2 \<br>        &amp; &#x3D; |\mathbf{v_1}|\sin\theta_1\cdot|\mathbf{v_2}|\sin \theta_2 + |\mathbf{v_1}|\cos\theta_1\cdot|\mathbf{v_2}|\cos \theta_2\<br>        &amp; &#x3D; |\mathbf{v_1}||\mathbf{v_2}|(\sin\theta_1\cdot\sin\theta_2+\cos\theta_1\cdot\cos\theta_2)\end{align}$$<br>Then by cosine identity, which is $\cos(\theta_1-\theta_2) &#x3D; \cos\theta_1\cdot\cos\theta_2+\sin\theta_1\cdot\sin\theta_2$, we get<br>$$\begin{align} \mathbf{v_1} \cdot \mathbf{v_2} &amp; &#x3D; |\mathbf{v_1}||\mathbf{v_2}|\cos(\theta_1-\theta_2) \<br>    &amp; &#x3D; |\mathbf{v_1}||\mathbf{v_2}|\cos(\Delta\theta) \<br>    &amp; &#x3D; |\mathbf{v_1}|\cos(\Delta\theta)\cdot|\mathbf{v_2}|\end{align}$$<br>When put two vectors together, we see the intuitive meaning of it, which is multiplication of the length of projection of $\mathbf{v_1}$ on $\mathbf{v_2}$ with the length of $\mathbf{v_2}$.<br><img src="/images/cross_prod_3.jpg"><br>Which is a scale related to the angle between two vectors (more specifically, in what degree they are in the same line) and the length between them. So when people only care about the level of parallel, they do cosine similarity:<br>$$\text{cosine similarity} &#x3D; \frac{\mathbf{v_1}\cdot\mathbf{v_f}}{|\mathbf{v_1}||\mathbf{v_2}|} &#x3D; \cos(\Delta\theta)$$<br>Hope this example help you feel more trivia about the operation, it does for me a little bit. If not, let’s go through an real life example:<br><img src="/images/anti_gravity_lean.jpg"><br>Say MJ is performing his Anti-Gravity Lean toward a line on the ground. Let MJ be $\mathbf{v_1}$ and the line be $\mathbf{v_2}$ (we view from aside), there’s sunshine above MJ head. We observe this performance from a location orthogonal to the plane formed by standing MJ and the line. $\cos\Delta\theta\cdot\mathbf{v_1}$ is the shadow of MJ on the line, the more parallel MJ is to the line, the longer his shadow is, and therefore the larger the dot product of MJ and the line would be.<br>To MJ, the dot product might be something correlated to his sense of the length of the line (when the line is beneath him). Since the more parallel they are, the longer the line is in his eyes.</p>
+</tbody>
+</table>
+</div>
+<p>So that dot product is<br>
+$$
+\begin{align*} 
+\mathbf{v_1} \cdot \mathbf{v_2} & = i_1\cdot i_2 + j_1\cdot j_2 \\ 
+& = |\mathbf{v_1}|\sin\theta_1\cdot|\mathbf{v_2}|\sin \theta_2 + |\mathbf{v_1}|\cos\theta_1\cdot|\mathbf{v_2}|\cos \theta_2 \\
+& = |\mathbf{v_1}||\mathbf{v_2}|(\sin\theta_1\cdot\sin\theta_2+\cos\theta_1\cdot\cos\theta_2)
+\end{align*}
+$$
+</p>
+<p>Then by cosine identity, which is $\cos(\theta_1-\theta_2) = \cos\theta_1\cdot\cos\theta_2+\sin\theta_1\cdot\sin\theta_2$, we get</p>
+<script type="math/tex; mode=display">\begin{align} \mathbf{v_1} \cdot \mathbf{v_2} & = |\mathbf{v_1}||\mathbf{v_2}|\cos(\theta_1-\theta_2) \\
+    & = |\mathbf{v_1}||\mathbf{v_2}|\cos(\Delta\theta) \\
+    & = |\mathbf{v_1}|\cos(\Delta\theta)\cdot|\mathbf{v_2}|\end{align}</script><p>When put two vectors together, we see the intuitive meaning of it, which is multiplication of the length of projection of $\mathbf{v_1}$ on $\mathbf{v_2}$ with the length of $\mathbf{v_2}$.<br><img src="/images/cross_prod_3.jpg" alt=""><br>Which is a scale related to the angle between two vectors (more specifically, in what degree they are in the same line) and the length between them. So when people only care about the level of parallel, they do cosine similarity:</p>
+<script type="math/tex; mode=display">\text{cosine similarity} = \frac{\mathbf{v_1}\cdot\mathbf{v_f}}{|\mathbf{v_1}||\mathbf{v_2}|} = \cos(\Delta\theta)</script><p>Hope this example help you feel more trivia about the operation, it does for me a little bit. If not, let’s go through an real life example:<br><img src="/images/anti_gravity_lean.jpg" alt=""><br>Say MJ is performing his Anti-Gravity Lean toward a line on the ground. Let MJ be $\mathbf{v_1}$ and the line be $\mathbf{v_2}$ (we view from aside), there’s sunshine above MJ head. We observe this performance from a location orthogonal to the plane formed by standing MJ and the line. $\cos\Delta\theta\cdot\mathbf{v_1}$ is the shadow of MJ on the line, the more parallel MJ is to the line, the longer his shadow is, and therefore the larger the dot product of MJ and the line would be.<br>To MJ, the dot product might be something correlated to his sense of the length of the line (when the line is beneath him). Since the more parallel they are, the longer the line is in his eyes.</p>
 <p>Note: this is not a formal proof, for formal proof you can see <a target="_blank" rel="noopener" href="https://tutorial.math.lamar.edu/classes/calcii/dotproduct.aspx">here</a></p>
 
       </div>
@@ -207,7 +229,7 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="Update time"></i>
-              2024-10-26 19:33:34
+              2024-10-26 21:03:49
             </span>
             
                   <span class="post-tags">

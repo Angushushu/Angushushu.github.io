@@ -34,6 +34,10 @@
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1886449_67xjft27j1l.css" />
   <!-- 代码块风格 -->
   
+    
+<link rel="stylesheet" href="/css/figcaption/mac-block.css">
+
+  
 
   <!-- jquery3.3.1 -->
   
@@ -70,7 +74,7 @@
       document.documentElement.setAttribute('color-mode', colorMode)
     }
   </script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
   <div id="particles-js" style="margin: 0; padding: 0; height: 100%; width: 100%; position: fixed;"></div>
   <body>
@@ -116,7 +120,7 @@
   <!-- LaTex Display -->
 
   
-    <script async type="text/javascript" src="/plugins/mathjax/tex-chtml.js"></script>
+    <script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   
   <script>
     MathJax = {
@@ -133,7 +137,7 @@
   <!-- clipboard -->
 
   
-    <script async type="text/javascript" src="/plugins/clipboard.min.js"></script>
+    <script async type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
   
   
 <script src="/js/codeCopy.js"></script>
@@ -161,14 +165,14 @@
                 <i class="iconfont icon-tags mr-10" title="Tags"></i>
                 
                 <span class="span--tag mr-8">
-                  <a href="/tags/theory/" title="theory">
-                    #theory
+                  <a href="/tags/model/" title="model">
+                    #model
                   </a>
                 </span>
                 
                 <span class="span--tag mr-8">
-                  <a href="/tags/model/" title="model">
-                    #model
+                  <a href="/tags/theory/" title="theory">
+                    #theory
                   </a>
                 </span>
                 
@@ -176,12 +180,10 @@
           
       </div>
       <div class="markdown-body">
-        <center>
+        <p><center>
 <img src="/images/struct_example.png" width="500">
 naive example of the structure
-</center>
-Above is a naive example that shows the main component of the potential model: the connections between representations, and the connections between states (by actions). There will be a lot of features needed to be adjusted, just providing an insight into the model.
-
+</center><br>Above is a naive example that shows the main component of the potential model: the connections between representations, and the connections between states (by actions). There will be a lot of features needed to be adjusted, just providing an insight into the model.</p>
 <h1 id="Elements"><a href="#Elements" class="headerlink" title="Elements"></a>Elements</h1><p>The two main elements required to generate this structure are representations (set of representations), and actions (sequence of actions). The finest elements of them (without elements constructing them) are the representation units and action units. These elements are connected by two types of connection, let’s call them connection 1 and connection 2. Connection 1 is intended to simulate semantic memory, priming, activation of knowledge, etc. Connection 2 is intended to simulate procedural memory, knowledge of problem-solving, etc. Connection 2 is always directed, but the features of Connection 1 will need more discussion.</p>
 <h2 id="1-Representation"><a href="#1-Representation" class="headerlink" title="1 Representation"></a>1 Representation</h2><p>Representation is an abstract but simple concept. It’s a set of certain information (elements), and the elements within a representation can be representation units, representations, ordered pairs of representations, or actions. You can consider it as a node in an artificial neural network that explicitly states its meaning (which makes the model more explanatory).</p>
 <h3 id="1-1-Representation-Unit"><a href="#1-1-Representation-Unit" class="headerlink" title="1.1 Representation Unit"></a>1.1 Representation Unit</h3><p>A representation unit is the most basic unit of representation, which contains nothing. You can consider it as a sensory unit, which provides information by itself. In the implementation, representation is more like a starting point of the model, the implementer of the model could determine its level of specificity. For instance, in discourse psychology, a representation unit can be a letter, a word, or a thought unit.</p>
@@ -213,14 +215,14 @@ Above is a naive example that shows the main component of the potential model: t
                     <i class="iconfont icon-tags mr-10" title="Tags"></i>
                     
                     <span class="span--tag mr-8">
-                      <a href="/tags/theory/" title="theory">
-                        #theory
+                      <a href="/tags/model/" title="model">
+                        #model
                       </a>
                     </span>
                     
                     <span class="span--tag mr-8">
-                      <a href="/tags/model/" title="model">
-                        #model
+                      <a href="/tags/theory/" title="theory">
+                        #theory
                       </a>
                     </span>
                     
